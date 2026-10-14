@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Ember &amp; Oak Distillery — Welcome</title>
+<title>Ember &amp; Oak Distillery: Welcome</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%236b1f2a'/%3E%3Ctext x='8' y='12' font-family='Georgia' font-size='11' fill='%23f5efe2' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E" />
 
 <!-- ============================================================= -->
@@ -49,7 +49,7 @@
   body.dash #welcome{ opacity:0; visibility:hidden; transform:scale(.965); pointer-events:none; }
   body.dash #dashboard{ opacity:1; visibility:visible; transform:none; pointer-events:auto; }
 
-  /* ============ SCREEN 1 — WELCOME ============ */
+  /* ============ SCREEN 1: WELCOME ============ */
   .stage{ position:relative; z-index:2; width:min(700px,100%);
     padding:clamp(26px,4.2vw,52px) clamp(22px,4.5vw,58px); text-align:center;
     border:1px solid rgba(176,141,87,.55); outline:1px solid rgba(176,141,87,.28); outline-offset:7px;
@@ -95,7 +95,7 @@
     font-size:clamp(9.5px,1.3vw,11px); letter-spacing:.34em; text-transform:uppercase;
     color:var(--brass); opacity:.9; animation:rise .9s .96s both; }
 
-  /* ============ SCREEN 2 — DASHBOARD (LIGHT, MULTI-VIEW) ============ */
+  /* ============ SCREEN 2: DASHBOARD (LIGHT, MULTI-VIEW) ============ */
   #dashboard{ background:
       radial-gradient(90% 60% at 50% -8%, rgba(156,47,61,.10), transparent 60%),
       linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%); color:var(--ink); }
@@ -240,7 +240,7 @@
       <p class="kicker">Ember &amp; Oak</p>
       <h1><span class="l1">Welcome to the</span><span class="l2">Spirit Run</span></h1>
       <div class="rule" aria-hidden="true"><i></i><b></b><i></i></div>
-      <p class="sub">From grain to glass — your <em>mash, distillation, and
+      <p class="sub">From grain to glass: your <em>mash, distillation and
         DTC performance</em>, drawn into a single living view.</p>
       <a class="enter" id="enterBtn" href="#dashboard" aria-label="Enter the dashboard">
         Enter the dashboard <span class="arrow" aria-hidden="true">→</span></a>
@@ -248,7 +248,7 @@
     </main>
   </section>
 
-  <!-- ============ SCREEN 2 — DASHBOARD ============ -->
+  <!-- ============ SCREEN 2: DASHBOARD ============ -->
   <section class="screen" id="dashboard" aria-hidden="true">
     <div class="panel">
       <nav class="dash-nav">
@@ -276,7 +276,7 @@
 
 <script>
   // =========================================================
-  //  SEEDED DATA — edit these to change every view
+  //  SEEDED DATA: edit these to change every view
   // =========================================================
   const TANKS = [
     { id:'1', name:'Single Malt', temp:86, ph:0, vol:600, color:'#9a4e1f', brix:[78,76,74,71,67,60,50,40] },
@@ -295,11 +295,11 @@
     {label:'Tasting Room',val:540},{label:'Online',val:380},{label:'Wholesale',val:720},{label:'Cocktail Bars',val:260}
   ];
   const FILINGS = [
-    {report:'TTB F 5110.40 — Monthly Production',period:'Apr 2026',due:'May 15',status:['Filed','ok']},
-    {report:'TTB F 5110.28 — Processing',period:'Apr 2026',due:'May 15',status:['Filed','ok']},
-    {report:'TTB Excise — Distilled Spirits',period:'Q1 2026',due:'Apr 14',status:['Due','due']},
+    {report:'TTB F 5110.40: Monthly Production',period:'Apr 2026',due:'May 15',status:['Filed','ok']},
+    {report:'TTB F 5110.28: Processing',period:'Apr 2026',due:'May 15',status:['Filed','ok']},
+    {report:'TTB Excise: Distilled Spirits',period:'Q1 2026',due:'Apr 14',status:['Due','due']},
     {report:'State DSP Report',period:'Apr 2026',due:'May 31',status:['Due','due']},
-    {report:'COLA — Barrel-Strength Rye',period:'Pending',due:'May 9',status:['Overdue','late']}
+    {report:'COLA: Barrel-Strength Rye',period:'Pending',due:'May 9',status:['Overdue','late']}
   ];
 
   // ---- tiny DOM + svg helpers ----
@@ -430,10 +430,10 @@
 
   function factsGrid(){
     const list=[
-      ['≈','Ferment, then distill','Wash is fermented to ~7–9% ABV, then boiled in the still — alcohol vaporises first and is condensed back to liquid.'],
-      ['✂','Heads · hearts · tails','The distiller cuts the run, keeping the clean ‘hearts’ and setting aside the harsh heads and weak tails.'],
-      ['%','Proof = 2× ABV','New-make spirit runs hot off the still — often 120–160 proof — before reduction and barrelling.'],
-      ['🛢','Aged in oak','Oak barrels lend colour, vanilla and spice; the ‘angel’s share’ evaporates a little every year.']
+      ['≈','Ferment, then distill','Wash is fermented to ~7 to 9% ABV, then boiled in the still. Alcohol vaporises first and is condensed back to liquid.'],
+      ['✂','Heads · hearts · tails','The distiller cuts the run, keeping the clean hearts and setting aside the harsh heads and weak tails.'],
+      ['%','Proof = 2× ABV','New-make spirit runs hot off the still, often 120 to 160 proof, before reduction and barrelling.'],
+      ['🛢','Aged in oak','Oak barrels lend colour, vanilla and spice; the angel\'s share evaporates a little every year.']
     ];
     const g=el('div','facts'); list.forEach(f=>{ const d=el('div','fact'); d.appendChild(el('span','ic',f[0]));
       const box=el('div'); box.appendChild(el('h4',null,f[1])); box.appendChild(el('p',null,f[2])); d.appendChild(box); g.appendChild(d); });
@@ -447,7 +447,7 @@
     const avgBrix=TANKS.reduce((s,t)=>s+curBrix(t),0)/TANKS.length;
     const avgTemp=TANKS.reduce((s,t)=>s+t.temp,0)/TANKS.length;
     const totVol=TANKS.reduce((s,t)=>s+t.vol,0);
-    f.appendChild(head('The Still House','Spirit run, live','Live pot stills concentrating wash into spirit — every value is computed from the seeded dataset.'));
+    f.appendChild(head('The Still House','Spirit run, live','Live pot stills concentrating wash into spirit. Every value is computed from the seeded dataset.'));
     f.appendChild(secLabel('Still house at a glance'));
     f.appendChild(kpiGrid([{lab:'Stills Running',val:String(active)},{lab:'Avg ABV',val:avgBrix.toFixed(0),unit:'%'},
       {lab:'Avg Temp',val:avgTemp.toFixed(0),unit:'°C'},{lab:'Total Charge',val:(totVol/1000).toFixed(1),unit:'kL'}]));
@@ -458,7 +458,7 @@
   }
   function vOverview(){
     const f=document.createDocumentFragment();
-    f.appendChild(head('Distillery Overview','The year at a glance','A top-line read on the whole distillery — stills, barrels, revenue, and club.'));
+    f.appendChild(head('Distillery Overview','The year at a glance','A top-line read on the whole distillery: stills, barrels, revenue and club.'));
     f.appendChild(secLabel('Key numbers'));
     f.appendChild(kpiGrid([{lab:'Barrels Aging',val:'1,860'},{lab:'Cases YTD',val:'11.1',unit:'K'},
       {lab:'Revenue YTD',val:'$1.9',unit:'M'},{lab:'Members',val:'740'}]));
@@ -467,7 +467,7 @@
   }
   function vProduction(){
     const f=document.createDocumentFragment();
-    f.appendChild(head('Production','Mash to barrel','Mash and fermentation, stills in operation, and spirit laid down to barrel.'));
+    f.appendChild(head('Production','Mash to barrel','Mash and fermentation, stills in operation and spirit laid down to barrel.'));
     f.appendChild(secLabel('Key numbers'));
     f.appendChild(kpiGrid([{lab:'Mash Batches',val:'128'},{lab:'Stills Running',val:'4'},
       {lab:'LPA Produced',val:'16.9',unit:'K'},{lab:'Barrels Filled',val:'420'}]));
@@ -476,7 +476,7 @@
   }
   function vSales(){
     const f=document.createDocumentFragment();
-    f.appendChild(head('Sales & DTC','Where the spirit goes','A balanced mix — tasting room, online, wholesale, and cocktail bars.'));
+    f.appendChild(head('Sales & DTC','Where the spirit goes','A balanced mix: tasting room, online, wholesale and cocktail bars.'));
     f.appendChild(secLabel('Key numbers'));
     f.appendChild(kpiGrid([{lab:'Revenue YTD',val:'$1.9',unit:'M'},{lab:'DTC Share',val:'48',unit:'%'},
       {lab:'Members',val:'740'},{lab:'Avg Bottle',val:'$58'}]));
@@ -485,7 +485,7 @@
   }
   function vCompliance(){
     const f=document.createDocumentFragment();
-    f.appendChild(head('Compliance','TTB & state filings','Federal and state reporting status, excise due, and upcoming deadlines.'));
+    f.appendChild(head('Compliance','TTB & state filings','Federal and state reporting status, excise due and upcoming deadlines.'));
     f.appendChild(secLabel('Key numbers'));
     f.appendChild(kpiGrid([{lab:'Reports Filed',val:'14'},{lab:'Excise Due',val:'$128',unit:'K'},
       {lab:'Open Tasks',val:'2'},{lab:'States Licensed',val:'26'}]));
